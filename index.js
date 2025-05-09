@@ -49,9 +49,9 @@ feature.canAccess(userRole);
   TimeLog.prototype.checkWeeklyHours = function() {
     let totalHours = this.logs.reduce((sum, log) => sum + log.hoursWorked, 0);
     if (totalHours > 40) {
-      console.log("Overtime worked");
+      console.log(`${this.freelancerName} worked more than given hours this week`);
     } else {
-      console.log("Within normal hours.");
+      console.log(`${this.freelancerName} worked Within normal hours this week.`);
     }
   };
   
@@ -143,7 +143,6 @@ function Employee(id, name, performanceMetrics, feedback) {
     }
   };
   
-  // Example Usage
   let emp = new Employee(11, "Meron", { communication: 5, efficiency: 29, reliability: 28 }, []);
   emp.classifyPerformance();
   emp.addFeedback("Best at problem-solving.");
